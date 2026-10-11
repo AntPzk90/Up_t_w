@@ -6,15 +6,11 @@
           <th>Name</th>
           <th>Email</th>
 
-          <th @click="$emit('sort', 'age')">
-            Age
-          </th>
+          <th @click="$emit('sort', 'age')">Age</th>
 
           <th>Role</th>
 
-          <th @click="$emit('sort', 'createdAt')">
-            Created
-          </th>
+          <th @click="$emit('sort', 'createdAt')">Created</th>
         </tr>
       </thead>
 
@@ -28,7 +24,7 @@
           <td>{{ user.age }}</td>
           <td>{{ user.role }}</td>
           <td>
-            {{ new Date(user.createdAt).toLocaleDateString() }}
+            {{ new Date(user.createdAt).toLocaleDateString('uk-UA') }}
           </td>
         </tr>
       </tbody>

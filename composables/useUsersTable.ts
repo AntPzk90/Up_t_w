@@ -54,7 +54,8 @@ export function useUsersTable(users: UserT[]) {
         : DEFAULT_PER_PAGE,
   )
 
-  // derived lists, search matches name or email, case-insensitive
+  // derived lists
+  // search matches name or email, case-insensitive
   const filteredUsers = computed(() => {
     const query = debouncedSearch.value.trim().toLowerCase()
 

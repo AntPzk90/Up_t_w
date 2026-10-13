@@ -4,11 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "nuxt dev",
+    "dev:host": "nuxt dev --host",
     "build": "nuxt build",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "lint:css": "stylelint \"**/*.{vue,scss}\"",
+    "lint:css:fix": "stylelint \"**/*.{vue,scss}\" --fix"
   },
   "dependencies": {
     "nuxt": "^4.2.2",
@@ -16,6 +19,11 @@
     "vue-router": "^4.6.4"
   },
   "devDependencies": {
-    "prettier": "^3.9.10"
+    "postcss-html": "^2.0.0",
+    "postcss-scss": "^4.0.9",
+    "prettier": "^3.9.10",
+    "sass-embedded": "^1.105.1",
+    "stylelint": "^17.16.0",
+    "stylelint-config-recess-order": "^7.8.0"
   }
 }

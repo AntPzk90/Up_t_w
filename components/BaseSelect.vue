@@ -25,8 +25,13 @@ defineProps({
 const model = defineModel()
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .select {
-  padding: 6px;
+  flex-grow: 1;
+  padding: 8px;
+  padding-inline-end: 12px;
+  color: $color-secondary-text;
+  background: $color-secondary;
+  border-radius: 4px;
 }
 </style>

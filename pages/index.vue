@@ -1,34 +1,48 @@
 <template>
-  <UserFilters
-    :search="search"
-    :role="role"
-    :perPage="perPage"
-    @update:search="search = $event"
-    @update:role="role = $event"
-    @update:perPage="perPage = $event"
-  />
+  <div class="container">
+    <UserFilters
+      :search="search"
+      :role="role"
+      :perPage="perPage"
+      @update:search="search = $event"
+      @update:role="role = $event"
+      @update:perPage="perPage = $event"
+    />
 
-  <UserTable
-    :users="paginatedUsers"
-    @sort="onSort"
-  />
+    <UserTable
+      :users="paginatedUsers"
+      @sort="onSort"
+      :sortBy="sortBy"
+      :sortDirection="sortDirection"
+      v-if="paginatedUsers.length"
+    />
 
-  <div class="pagination">
-    <button
-      @click="page--"
-      :disabled="page === 1"
+    <div
+      class="not-found"
+      v-else
     >
-      Prev
-    </button>
+      {{ 'Oops... Not found users :(' }}
+    </div>
 
-    <span>{{ page }} / {{ totalPages }}</span>
+    <div class="pagination">
+      <button
+        class="pagination__button button button--primary"
+        @click="page--"
+        :disabled="page === 1"
+      >
+        Prev
+      </button>
 
-    <button
-      @click="page++"
-      :disabled="page === totalPages"
-    >
-      Next
-    </button>
+      <span class="pagination__pages">{{ page }} / {{ totalPages }}</span>
+
+      <button
+        class="pagination__button button button--primary"
+        @click="page++"
+        :disabled="page === totalPages"
+      >
+        Next
+      </button>
+    </div>
   </div>
 </template>
 
@@ -61,11 +75,34 @@ function onSort(field) {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.container {
+  @include container;
+}
+
 .pagination {
-  margin-top: 12px;
-  display: flex;
+  @include flex-center;
+
   gap: 8px;
-  align-items: center;
+  margin-top: 12px;
+
+  &__pages {
+    min-width: 42px;
+    text-align: center;
+  }
+}
+
+.not-found {
+  @include flex-center;
+
+  min-height: $content-min-height;
+  margin-inline: auto;
+  font-size: 32px;
+  text-align: center;
+
+  @include respond-to($bp-tablet) {
+    max-width: $content-max-width;
+    min-height: $content-min-height-tablet;
+  }
 }
 </style>

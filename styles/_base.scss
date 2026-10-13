@@ -1,0 +1,53 @@
+@use './variables' as *;
+
+html {
+  overscroll-behavior-y: none;
+}
+
+body {
+  font-family: 'Quicksand', sans-serif;
+  color: $color-text;
+  background: $color-body;
+  transition:
+    background $transition-time,
+    color $transition-time;
+
+  &::before,
+  &::after {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    content: '';
+    transition: opacity $transition-time;
+  }
+
+  &::before {
+    background: $gradient-body-dark;
+    opacity: $gradient-body-dark-opacity;
+  }
+
+  &::after {
+    background: $gradient-body-light;
+    opacity: $gradient-body-light-opacity;
+  }
+}
+
+.input,
+.select {
+  height: 40px;
+  border: 1px solid $color-border;
+  transition:
+    background $transition-time,
+    color $transition-time,
+    border-color $transition-time;
+
+  &:hover {
+    border: 1px solid $color-primary-hover;
+  }
+
+  &:focus,
+  &:focus-within {
+    border: 1px solid $color-tertiary;
+  }
+}

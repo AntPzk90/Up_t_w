@@ -1,0 +1,17 @@
+$quicksand-weights: (
+  'Light': 300,
+  'Regular': 400,
+  'Medium': 500,
+  'SemiBold': 600,
+  'Bold': 700,
+);
+
+@each $name, $weight in $quicksand-weights {
+  @font-face {
+    font-family: 'Quicksand';
+    font-style: normal;
+    font-weight: $weight;
+    src: url('/fonts/quicksand/Quicksand-#{$name}.woff2') format('woff2');
+    font-display: swap;
+  }
+}

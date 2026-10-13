@@ -1,6 +1,7 @@
 <template>
   <div class="filters">
     <input
+      class="filters__input input"
       :value="search"
       @input="$emit('update:search', $event.target.value)"
       placeholder="Search by name or email"
@@ -32,10 +33,43 @@ defineProps({
 defineEmits(['update:search', 'update:role', 'update:perPage'])
 </script>
 
-<style scoped>
+<style scoped lang="scss">
 .filters {
+  position: sticky;
+  top: 0;
+  z-index: 10;
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 12px;
+  justify-content: space-between;
+  max-width: $content-max-width-mobile;
+  padding-block: 12px;
+  padding-inline: 2px;
+  margin-inline: auto;
+  background: $color-body;
+  border-radius: 4px;
+  transition: background $transition-time;
+
+  @include respond-to($bp-tablet) {
+    max-width: $content-max-width;
+  }
+
+  &__input {
+    flex-grow: 1;
+    width: 100%;
+    padding: 8px;
+    color: $color-text;
+    background: $color-secondary;
+    border-radius: 4px;
+    transition:
+      background $transition-time,
+      color $transition-time,
+      border-color $transition-time;
+
+    &::placeholder {
+      color: $color-text-muted;
+      transition: color $transition-time;
+    }
+  }
 }
 </style>

@@ -1,0 +1,44 @@
+$bp-tablet: 768px;
+$bp-desktop: 1280px;
+
+$container-padding: 20px;
+
+$content-max-width: 732px;
+$content-max-width-mobile: calc(100vw - #{$container-padding * 2});
+$content-min-height: 380px;
+$content-min-height-tablet: 445px;
+
+$table-width: 728px;
+$table-max-width-mobile: calc(100vw - 42px);
+
+$filters-height: 112px;
+
+$color-body: var(--color-body);
+$color-header: var(--color-header);
+$color-footer: var(--color-footer);
+
+$gradient-body-dark: var(--gradient-body-dark);
+$gradient-body-light: var(--gradient-body-light);
+$gradient-body-dark-opacity: var(--gradient-body-dark-opacity);
+$gradient-body-light-opacity: var(--gradient-body-light-opacity);
+
+$color-text: var(--color-text);
+$color-text-muted: var(--color-text-muted);
+
+$color-border: var(--color-border);
+
+$color-primary: var(--color-primary);
+$color-primary-hover: var(--color-primary-hover);
+$color-primary-active: var(--color-primary-active);
+$color-primary-text: var(--color-primary-text);
+
+$color-secondary: var(--color-secondary);
+$color-secondary-hover: var(--color-secondary-hover);
+$color-secondary-text: var(--color-secondary-text);
+
+$color-tertiary: var(--color-tertiary);
+
+$color-table-head: var(--color-table-head);
+$color-table-cell: var(--color-table-cell);
+
+$transition-time: ease 0.3s;

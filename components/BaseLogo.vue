@@ -1,7 +1,7 @@
 <template>
   <img
     class="logo"
-    src="/nuxt-js-logo.svg"
+    src="~/assets/nuxt-js-logo.svg"
     alt="Nuxt logo"
     :width="size"
     :height="size"

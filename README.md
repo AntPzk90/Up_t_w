@@ -47,7 +47,7 @@ Other scripts:
 - **Cookie instead of `localStorage` for the theme.** The page is server-rendered, and the server can read a cookie. The HTML arrives with the right theme class, so there is no flash of the wrong theme on load.
 - **Two gradient layers for the background.** A gradient cannot be transitioned, so each theme has its own layer and they cross-fade.
 - **Real `<table>` with `table-layout: fixed`.** Column widths are fixed and long values are cut with an ellipsis, which renders the same in Chrome and Safari.
-- **The font is served locally** from `public/fonts`, with no requests to third-party hosts.
+- **The font is served locally** from `assets/fonts`, with no requests to third-party hosts.
 
 ## Project structure
 

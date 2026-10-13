@@ -128,7 +128,7 @@ defineEmits(['sort'])
     background: transparent;
   }
 
-  // Firefox doesn't support ::-webkit-scrollbar
+  // Firefox 
   @supports not selector(::-webkit-scrollbar) {
     scrollbar-color: $color-primary $color-secondary;
     scrollbar-width: thin;

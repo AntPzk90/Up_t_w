@@ -16,7 +16,12 @@ const isDark = useCookie('is-dark', {
   default: () => true,
 })
 
-useHead({ htmlAttrs: { class: () => (isDark.value ? '' : 'theme-light') } })
+const { baseURL } = useRuntimeConfig().app
+
+useHead({
+  htmlAttrs: { class: () => (isDark.value ? '' : 'theme-light') },
+  link: [{ rel: 'icon', type: 'image/x-icon', href: `${baseURL}favicon.ico` }],
+})
 </script>
 
 <style scoped lang="scss">
